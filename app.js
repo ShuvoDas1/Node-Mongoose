@@ -8,6 +8,7 @@ const db = require('./db/db');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const shopsRouter = require('./routes/shop');
+const authRouter = require('./routes/auth');
 
 const app = express();
 app.use(logger('dev'));
@@ -19,5 +20,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops', shopsRouter );
+app.use('/auth', authRouter);
 
 module.exports = app;
